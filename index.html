@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trivia Battle Game</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo-img.png">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Blaka+Ink&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="loader" style="display: none">Loading...</div>
+
+    <div id="title"><div>Trivia Battle Game</div> <img id="logo-img" src="Images/logo-img.png" alt="failed to load"></div>
+    <div id="player-setup">
+      <input type="text" id="player1-name" placeholder="Player 1 Name" />
+      <input type="text" id="player2-name" placeholder="Player 2 Name" />
+      <button id="start-game">Start Game</button>
+    </div>
+
+    <div id="category-selection" style="display: none">
+      <h2>Select a Category</h2>
+      <select id="category-list"></select>
+      <button id="select-category">Select Category</button>
+    </div>
+
+    <div id="question-display" style="display: none">
+      <div id="header">
+        <div id="current-player"></div>
+        <div id="difficulty-level"></div>
+      </div>
+      <h2 id="question-text"></h2>
+      <div id="answers"></div>
+    </div>
+
+    <div id="game-end" style="display: none">
+      <h2>Game Over</h2>
+      <p id="final-scores"></p>
+      <h3 id="winner"></h3>
+      <button id="restart-game">Restart Game</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
