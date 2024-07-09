@@ -137,7 +137,7 @@ function selectAnswer(selectedAnswer, correctAnswer) {
 
 function updateCurrentPlayerDisplay() {
     const currentPlayerDisplay = document.getElementById('current-player');
-    currentPlayerDisplay.textContent = currentPlayer === 1 ? `Current Player: ${player1}` : `Current Player: ${player2}`;
+    currentPlayerDisplay.textContent = currentPlayer === 1 ? ` Player: ${player1}` : ` Player: ${player2}`;
     currentPlayerDisplay.classList.toggle('player1', currentPlayer === 1);
     currentPlayerDisplay.classList.toggle('player2', currentPlayer === 2);
 }
@@ -146,8 +146,26 @@ function endGame() {
     document.getElementById('question-display').style.display = 'none';
     document.getElementById('game-end').style.display = 'block';
     document.getElementById('final-scores').textContent = `Player 1: ${scores.player1}, Player 2: ${scores.player2}`;
-    document.getElementById('winner').textContent = scores.player1 > scores.player2 ? 'Player 1 Wins!' : 'Player 2 Wins!';
+    
+    if (scores.player1 > scores.player2) {
+        document.getElementById('winner').textContent = `${player1} Wins!`;
+    } else if (scores.player2 > scores.player1) {
+        document.getElementById('winner').textContent = `${player2} Wins!`;
+    } else {
+        document.getElementById('winner').textContent = 'It\'s a Tie!';
+    }
+    
+    document.getElementById('continue-game').style.display = categories.length > usedCategories.size ? 'block' : 'none';
+    if (categories.length === usedCategories.size) {
+        document.getElementById('total-final-scores').textContent = `Total Scores - Player 1: ${scores.player1}, Player 2: ${scores.player2}`;
+    }
 }
+
+document.getElementById('continue-game').addEventListener('click', () => {
+    currentQuestionIndex = 0;
+    document.getElementById('game-end').style.display = 'none';
+    displayCategories();
+});
 
 document.getElementById('restart-game').addEventListener('click', () => {
     player1 = '';

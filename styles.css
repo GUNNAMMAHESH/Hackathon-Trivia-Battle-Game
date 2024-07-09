@@ -9,6 +9,7 @@ body {
   align-items: center;
   height: 100vh;
   text-align: center;
+  user-select: none
   /* background:url(Images/bg-image.png);
     background-size: contain;
     background-repeat: no-repeat; */
@@ -67,6 +68,9 @@ body {
 #category-selection,
 #question-display,
 #game-end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -105,10 +109,10 @@ button:hover {
   background-color: white;
   color: #465015cc;
   font-weight: bolder;
-border: 1px solid #465015cc ;
-box-shadow: inset #465015cc 0px 0px 10px 0px, inset #465015cc 0px 0px 40px 0px, inset #465015cc 0px 0px 36px -24px;
-  
+  border: 1px solid #465015cc;
+  box-shadow: inset #465015cc 0px 0px 10px 0px, inset #465015cc 0px 0px 40px 0px, inset #465015cc 0px 0px 36px -24px;
 }
+
 button:active {
   background-color: #465015cc;
   color: white;
@@ -120,7 +124,7 @@ button:active {
   align-items: center;
 }
 
-#answers button {
+#answers button, #restart-game, #continue-game {
   display: flex;
   justify-content: center;
   width: 70%;
@@ -132,19 +136,10 @@ button:active {
   border-radius: 5px;
 }
 
-#answers button:hover {
-  /* background-color: #218838; */
+#answers button:hover, #restart-game:hover, #continue-game:hover {
   background-color: white;
   color: #465015cc;
   box-shadow: 0px 0px 10px #465015cc;
-}
-
-#restart-game {
-  background-color: #ffc107;
-}
-
-#restart-game:hover {
-  background-color: #e0a800;
 }
 
 #current-player {
@@ -160,6 +155,7 @@ button:active {
 .player2 {
   color: red;
 }
+
 #question-display {
   position: relative;
 }
@@ -172,7 +168,6 @@ button:active {
 
 #difficulty-level {
   position: absolute;
-
   top: 10px;
   right: 10px;
   font-size: 14px;
@@ -181,4 +176,36 @@ button:active {
   padding: 5px 10px;
   border-radius: 5px;
   color: #465015cc;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+#continue-game, #restart-game {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin: 5px 0;
+  padding: 10px;
+  background-color: #465015cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#continue-game:hover, #restart-game:hover {
+  background-color: white;
+  color: #465015cc;
+  box-shadow: 0px 0px 10px #465015cc;
+}
+
+
+#winner{
+  font-size:x-large;
+  color:#03980f ;
 }
