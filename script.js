@@ -86,7 +86,7 @@ function fetchQuestions(categoryId) {
         fetchDifficultyQuestions('hard')
     ]).then(results => {
         questions = [...results[0], ...results[1], ...results[2]];
-        document.getElementById('loader').style.display = 'none'; // Hide loader
+        document.getElementById('loader').style.display = 'none'; 
         if (questions.length > 0) {
             displayQuestion();
         } else {
@@ -95,14 +95,14 @@ function fetchQuestions(categoryId) {
         }
     }).catch(error => {
         console.error('Error fetching questions:', error);
-        document.getElementById('loader').style.display = 'none'; // Hide loader
+        document.getElementById('loader').style.display = 'none'; 
     });
 }
 
 function displayQuestion() {
     if (currentQuestionIndex < questions.length) {
         const question = questions[currentQuestionIndex];
-        document.getElementById('question-text').innerHTML = question.question.text; // Ensure this accesses the question text
+        document.getElementById('question-text').innerHTML = question.question.text;
         document.getElementById('difficulty-level').innerHTML = `Difficulty: ${question.difficulty.charAt(0).toUpperCase() + question.difficulty.slice(1)}`;
         const answersDiv = document.getElementById('answers');
         answersDiv.innerHTML = '';

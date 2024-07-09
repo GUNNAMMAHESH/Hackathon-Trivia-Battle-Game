@@ -35,7 +35,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 24px;
-  border-radius: 40px;
+  padding: 5px 10px;
+  border-radius: 20px;
   color: #465015cc;
   border: 2px solid;
   overflow: hidden;
@@ -101,7 +102,16 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: white;
+  color: #465015cc;
+  font-weight: bolder;
+border: 1px solid #465015cc ;
+box-shadow: inset #465015cc 0px 0px 10px 0px, inset #465015cc 0px 0px 40px 0px, inset #465015cc 0px 0px 36px -24px;
+  
+}
+button:active {
+  background-color: #465015cc;
+  color: white;
 }
 
 #answers {
@@ -126,7 +136,7 @@ button:hover {
   /* background-color: #218838; */
   background-color: white;
   color: #465015cc;
-  box-shadow:0px 0px 10px #465015cc;
+  box-shadow: 0px 0px 10px #465015cc;
 }
 
 #restart-game {
