@@ -145,7 +145,7 @@ function updateCurrentPlayerDisplay() {
 function endGame() {
     document.getElementById('question-display').style.display = 'none';
     document.getElementById('game-end').style.display = 'block';
-    document.getElementById('final-scores').textContent = `Player 1: ${scores.player1}, Player 2: ${scores.player2}`;
+    document.getElementById('final-scores').textContent = `${player1} : ${scores.player1} | ${player2} : ${scores.player2}`;
     
     if (scores.player1 > scores.player2) {
         document.getElementById('winner').textContent = `${player1} Wins!`;
